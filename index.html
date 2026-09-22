@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ashley Lopez — Computer Science &amp; Criminal Justice</title>
+<meta name="description" content="Ashley Lopez — CS and criminal justice student at Northeastern University, working in data engineering and machine learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1B2CC1;
+  --ink-deep:#141F8F;
+  --coral:#FF4F6D;
+  --sun:#FFC93C;
+  --jade:#0FA97F;
+  --paper:#FFFBF2;
+  --graphite:#15151F;
+  --rule:rgba(21,21,31,.16);
+  --on-ink:#FFF6E4;
+
+  --bg:var(--paper);
+  --fg:var(--graphite);
+
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  background:var(--ink);
+  scroll-padding-top:env(safe-area-inset-top,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#4055F0;
+    --ink-deep:#2C3BC4;
+    --paper:#111119;
+    --graphite:#F3EFE3;
+    --rule:rgba(243,239,227,.18);
+    --coral:#FF6B84;
+    --sun:#FFD45C;
+    --jade:#2ED3A3;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#4055F0;
+  --ink-deep:#2C3BC4;
+  --paper:#111119;
+  --graphite:#F3EFE3;
+  --rule:rgba(243,239,227,.18);
+  --coral:#FF6B84;
+  --sun:#FFD45C;
+  --jade:#2ED3A3;
+}
+*,*::before,*::after{box-sizing:inherit}
+html,body{margin:0}
+body{
+  background:var(--bg);
+  color:var(--fg);
+  font-family:"Karla","Helvetica Neue",Arial,sans-serif;
+  font-size:clamp(1rem,.96rem + .2vw,1.125rem);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-weight:800;
+  letter-spacing:-.025em;
+  line-height:.95;
+  margin:0;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:2px}
+
+.wrap{width:min(68rem,100% - 2.5rem);margin-inline:auto}
+
+/* ---------- hero ---------- */
+.hero{
+  background:var(--ink);
+  color:var(--on-ink);
+  padding:clamp(3.5rem,9vw,7rem) 0 clamp(3rem,7vw,5.5rem);
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-12vw;top:-14vw;
+  width:46vw;height:46vw;border-radius:50%;
+  background:var(--ink-deep);
+  pointer-events:none;
+}
+.hero .wrap{position:relative;z-index:1}
+.name{
+  font-size:clamp(3.1rem,13.5vw,9.5rem);
+  line-height:.86;
+  letter-spacing:-.04em;
+  margin-bottom:.35em;
+}
+.name span{display:block}
+.name span:nth-child(2){color:var(--sun)}
+.tagline{
+  font-size:clamp(1.15rem,1rem + 1vw,1.6rem);
+  font-weight:500;
+  max-width:36ch;
+  margin:0 0 1.6rem;
+}
+.intro{max-width:54ch;margin:0 0 2.2rem;color:rgba(255,246,228,.87)}
+.links{display:flex;flex-wrap:wrap;gap:.7rem;list-style:none;padding:0;margin:0}
+.links a{
+  display:inline-block;
+  padding:.62rem 1.15rem;
+  border:2px solid var(--on-ink);
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:.95rem;
+  transition:background .15s ease,color .15s ease,border-color .15s ease;
+}
+.links a:hover{background:var(--sun);border-color:var(--sun);color:var(--graphite)}
+.links li:first-child a{background:var(--coral);border-color:var(--coral)}
+.links li:first-child a:hover{background:var(--sun);border-color:var(--sun)}
+
+/* ---------- sections ---------- */
+section.band{padding:clamp(3rem,7vw,5.5rem) 0}
+.band h2{
+  font-size:clamp(1.9rem,1.4rem + 2vw,3rem);
+  margin-bottom:2rem;
+  display:flex;align-items:baseline;gap:.6rem;
+}
+.band h2::before{
+  content:"";width:.5em;height:.5em;border-radius:50%;flex:none;
+  background:var(--coral);
+}
+#projects h2::before{background:var(--sun)}
+#skills h2::before{background:var(--jade)}
+#education h2::before{background:var(--ink)}
+
+/* ---------- entries ---------- */
+.job{
+  display:grid;
+  grid-template-columns:10.5rem 1fr;
+  gap:.4rem 2rem;
+  padding:1.9rem 0;
+  border-top:1px solid var(--rule);
+}
+.job:last-of-type{border-bottom:1px solid var(--rule)}
+.when{
+  font-weight:700;
+  font-size:.92rem;
+  padding-top:.42rem;
+  color:var(--ink);
+}
+.role{font-size:clamp(1.25rem,1.1rem + .6vw,1.6rem);font-weight:600}
+.where{font-weight:700;margin:.25rem 0 .7rem}
+.stack{font-weight:700;margin:.25rem 0 .7rem;color:var(--jade)}
+.job ul{margin:0;padding-left:1.1rem}
+.job li{margin-bottom:.4rem;max-width:64ch}
+.job li::marker{color:var(--coral)}
+.note{margin:.5rem 0 0;max-width:64ch}
+
+/* ---------- skills ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0;margin:0}
+.chips li{
+  padding:.45rem 1rem;
+  border-radius:999px;
+  font-weight:700;
+  font-size:.92rem;
+  background:var(--sun);
+  color:#15151F;
+}
+.chips li:nth-child(3n+2){background:var(--coral)}
+.chips li:nth-child(3n+3){background:var(--jade)}
+.skill-group{margin-bottom:2.2rem}
+.skill-group:last-child{margin-bottom:0}
+.skill-group h3{font-size:1.05rem;font-weight:600;letter-spacing:0;margin-bottom:.8rem}
+
+/* ---------- contact ---------- */
+.contact{
+  background:var(--ink);
+  color:var(--on-ink);
+  padding:clamp(3.2rem,8vw,6rem) 0 calc(clamp(3.2rem,8vw,6rem) + env(safe-area-inset-bottom,0px));
+}
+.contact h2{font-size:clamp(1.9rem,1.4rem + 2vw,3rem);margin-bottom:1rem}
+.contact p{max-width:48ch;color:rgba(255,246,228,.87)}
+.mailto{
+  display:inline-block;
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-weight:800;
+  letter-spacing:-.03em;
+  font-size:clamp(1.35rem,.9rem + 3.2vw,2.9rem);
+  color:var(--sun);
+  text-decoration:none;
+  border-bottom:.08em solid transparent;
+  margin:.8rem 0 1.6rem;
+  word-break:break-word;
+}
+.mailto:hover{border-bottom-color:var(--sun)}
+.colophon{font-size:.85rem;color:rgba(255,246,228,.62);margin:0}
+
+/* ---------- entrance ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .name span{animation:rise .7s cubic-bezier(.2,.7,.3,1) backwards}
+  .name span:nth-child(2){animation-delay:.09s}
+  .tagline{animation:rise .7s .18s cubic-bezier(.2,.7,.3,1) backwards}
+  @keyframes rise{from{opacity:0;transform:translateY(.4em)}to{opacity:1;transform:none}}
+}
+
+@media (max-width:640px){
+  .job{grid-template-columns:1fr;gap:.2rem}
+  .when{padding-top:0;margin-bottom:.3rem}
+}
+
+@media print{
+  :root{padding:0}
+  body{background:#fff;color:#000;font-size:10.5pt}
+  .hero,.contact{background:#fff;color:#000;padding:0 0 1rem}
+  .hero::after{display:none}
+  .intro,.contact p,.colophon{color:#000}
+  .name{font-size:26pt}
+  .name span{display:inline}
+  .name span:nth-child(2){color:#000}
+  .name span:nth-child(2)::before{content:" "}
+  .links a{border:1px solid #000;padding:0 .4rem;background:none!important;color:#000}
+  .mailto{color:#000;font-size:13pt}
+  .chips li{background:#eee!important;color:#000}
+  .when,.stack{color:#000}
+  section.band{padding:.7rem 0}
+  .job{break-inside:avoid;padding:.8rem 0}
+  h2{break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 class="name"><span>Ashley</span><span>Lopez</span></h1>
+    <p class="tagline">Computer science and criminal justice at Northeastern, working in data engineering and machine learning.</p>
+    <p class="intro">I like the part of the work where messy, manual data becomes something a team can actually rely on — pipelines, clean schemas, models that behave. Most recently I spent seven months at Vertex Pharmaceuticals automating manufacturing analytics. Graduating May 2027 and looking for co-ops and internships in data and software.</p>
+    <ul class="links">
+      <li><a href="mailto:lopez.ashl@northeastern.edu">Email me</a></li>
+      <li><a href="https://linkedin.com/in/ashleymarlopez">LinkedIn</a></li>
+      <li><a href="https://github.com/ashleylopezm">GitHub</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<section class="band" id="work">
+  <div class="wrap">
+    <h2>Experience</h2>
+
+    <article class="job">
+      <div class="when">Jan — Jul 2026</div>
+      <div>
+        <div class="role">Data Engineer</div>
+        <div class="where">Vertex Pharmaceuticals · Boston, MA</div>
+        <ul>
+          <li>Designed and automated data pipelines across JMP, Statistica, and Spotfire, turning manual analytical workflows into scalable, repeatable processes for manufacturing data analysis.</li>
+          <li>Used Snowflake to manage and structure large-scale datasets for efficient retrieval and integration.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">2021 — now</div>
+      <div>
+        <div class="role">Secretary</div>
+        <div class="where">Lopez Building and Remodeling · Remote</div>
+        <ul>
+          <li>Organize project data, estimates, and invoicing using digital tracking and communication tools.</li>
+          <li>Develop online customer acquisition through Google Business and social campaigns.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">May — Jul 2025</div>
+      <div>
+        <div class="role">Technology Analyst</div>
+        <div class="where">Department of Criminal Justice Training · Richmond, KY</div>
+        <ul>
+          <li>Managed and analyzed facial recognition input data to improve accuracy for training operations.</li>
+          <li>Served as Google Admin, standardizing classroom account setup and improving data accessibility.</li>
+          <li>Created reporting processes that streamlined software interactions and supported efficiency improvements.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">Aug — Dec 2024</div>
+      <div>
+        <div class="role">IT / AV Specialist</div>
+        <div class="where">Northeastern University · Boston, MA</div>
+        <ul>
+          <li>Troubleshot hardware and software issues for faculty and students, using diagnostics and logs to speed resolution.</li>
+          <li>Coordinated maintenance and upgrades with engineering teams to improve classroom system reliability.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band" id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+
+    <article class="job">
+      <div class="when">Nov — Dec 2025</div>
+      <div>
+        <div class="role">Online Bookstore Database System</div>
+        <div class="stack">SQL</div>
+        <ul>
+          <li>Architected a fully normalized (3NF) relational database modeling an online bookstore — books, editions, authors, publishers, and transactional sales data.</li>
+          <li>Wrote analytical queries using joins, groupings, and aggregations to evaluate sales performance, pricing strategy, and product popularity across several dimensions.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">Aug — Dec 2024</div>
+      <div>
+        <div class="role">Retraining AI with Trusted Data</div>
+        <div class="stack">Python · Break Through Tech AI</div>
+        <ul>
+          <li>Applied TF-IDF and feature engineering to preprocess 60,000+ applicant records for model retraining.</li>
+          <li>Ran correlation and trend analysis with metrics visualizations to verify reliable model behavior.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">Oct — Dec 2023</div>
+      <div>
+        <div class="role">Reversi</div>
+        <div class="stack">Java</div>
+        <ul>
+          <li>Designed and implemented GUI gameplay on an MVC architecture for modular, testable logic.</li>
+          <li>Collaborated on feature development using object-oriented and list-based structures.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band" id="skills">
+  <div class="wrap">
+    <h2>Skills &amp; tools</h2>
+
+    <div class="skill-group">
+      <h3>Languages</h3>
+      <ul class="chips">
+        <li>Java</li><li>Python</li><li>SQL</li><li>C++</li><li>R</li><li>Racket</li><li>LaTeX</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <h3>Machine learning &amp; data</h3>
+      <ul class="chips">
+        <li>scikit-learn</li><li>pandas</li><li>NumPy</li><li>Matplotlib</li><li>Seaborn</li>
+        <li>TF-IDF</li><li>Feature engineering</li><li>Data preprocessing</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <h3>Tools &amp; platforms</h3>
+      <ul class="chips">
+        <li>Snowflake</li><li>Git &amp; GitHub</li><li>Docker</li><li>Elasticsearch</li><li>Jupyter</li>
+        <li>Colab</li><li>JMP</li><li>Statistica</li><li>Spotfire</li><li>Microsoft Office</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+
+    <article class="job">
+      <div class="when">2022 — 2027</div>
+      <div>
+        <div class="role">BS, Computer Science and Criminal Justice</div>
+        <div class="where">Northeastern University, Khoury College · Boston, MA</div>
+        <p class="note">Minor in Management Information Systems. GPA 3.62. Huntington 100, Dean's List, Ujima Scholarship, Hispanic Scholarship Fund.</p>
+        <p class="note">Coursework in machine learning, information retrieval, algorithms and data, and data management in business. Active in Northeastern Taekwondo, Women in Tech, EV Kids Tutor, and Boston Cares.</p>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">Summer 2024</div>
+      <div>
+        <div class="role">Machine Learning Foundations certificate</div>
+        <div class="where">Cornell University · Break Through Tech AI</div>
+      </div>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>I'm looking for co-op and internship work in data engineering, machine learning, and software. Email is the best way to reach me.</p>
+    <a class="mailto" href="mailto:lopez.ashl@northeastern.edu">lopez.ashl@northeastern.edu</a>
+    <p class="colophon">Boston, MA · Updated September 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
