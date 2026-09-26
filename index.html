@@ -279,17 +279,40 @@ section.band{padding:clamp(3rem,7vw,5.5rem) 0}
 
 /* ---------- award callout ---------- */
 .award{
+  display:grid;
+  grid-template-columns:minmax(0,15rem) minmax(0,1fr);
+  gap:1.84rem 2.6rem;
+  align-items:center;
+  margin:2.8rem 0 0;
+  max-width:52rem;
+}
+/* photo sits on a brass block, echoding the brass rule beside the text */
+.award-photo {margin:0 .6rem .6rem 0;position:relative}
+.award-photo::before{
+  content:"";position:absolute;
+  inset:.6rem -.6rem -.6rem .6rem;
+  background:var(--brass);
+  border-radius:4px;
+}
+.award-photo img{
+  position:relative;display:block;
+  width:100%;
+  height:auto;
+  border-radius:4px
+}
+.award-text{
   border-left:4px solid var(--brass);
   padding:.2rem 0 .2rem 1.4rem;
-  margin:2.4rem 0 0;
-  max-width:60ch;
+  max-width:46ch;
 }
-.award h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
+.award h2{font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
 .award p{margin:0}
 
 @media (max-width:640px){
   .job{grid-template-columns:1fr;gap:.2rem}
   .when{padding-top:0;margin-bottom:.3rem}
+  .award{grid-template-columns:1fr}
+  .award-photo{max-width:16rem}
 }
 
 @media print{
@@ -314,7 +337,9 @@ section.band{padding:clamp(3rem,7vw,5.5rem) 0}
   .status{color:#000}
   .life{grid-template-columns:1fr 1fr;gap:.6rem 1.5rem}
   .life h3::before{background:#000!important}
-  .award{border-left:2px solid #000;break-inside:avoid}
+  .award{display:block;break-inside:avoid}
+  .award-photo{display:none}
+  .award-text{border-left:2px solid #000}
   h2{break-after:avoid}
 }
 </style>
@@ -324,7 +349,7 @@ section.band{padding:clamp(3rem,7vw,5.5rem) 0}
   <div class="wrap">
     <h1 class="name"><span>Ashley</span><span>Lopez</span></h1>
     <p class="tagline">Computer science and criminal justice at Northeastern — machine learning, data, and the policy side of both.</p>
-    <p class="intro">I was born and raised in Kentucky and came to Boston for school, mostly because I'd never lived in a city and wanted a different sense of what life could look like. I'm doing both majors on purpose: I care about policy and law, and I want to work in that sector. I'm a first-generation college student, and teaching is the thread through all of it. I tutor math and science here, and I teach back home at my church. When I'm not doing either, I'm at Taekwondo or on a trail. I'm bad at sitting still.</p>
+    <p class="intro">I was born and raised in Kentucky and came to Boston for school! Mostly because I'd never lived in a city and wanted a different sense of what life could look like. I'm doing both majors on purpose: I care about policy and law, and I want to work in that sector. I'm a first-generation college student, and teaching is the thread through all of it. I tutor math and science here, and I teach back home at my church. When I'm not doing either, I'm at Taekwondo or on a trail. I'm bad at sitting still.</p>
     <p class="status">Boston, MA &middot; Relocating to Lexington, KY &middot; Available July 2027</p>
     <ul class="links">
       <li><a href="mailto:lopez.ashl@northeastern.edu">Email me</a></li>
@@ -543,9 +568,16 @@ section.band{padding:clamp(3rem,7vw,5.5rem) 0}
     </article>
 
     <div class="award reveal">
-      <h3>Huntington 100</h3>
-      <p>Northeastern's Huntington 100 recognizes undergraduates entering their final year whose work reflects the university's mission and values. I was named to the 2026 cohort.</p>
+      <figure class="award-photo">
+        <img src="huntington100.JPG" width="300" height="1000" loading="lazy" decoding="async"
+             alt="Huntington 100">
+      </figure>
+      <div class="award-text">
+        <h3>Huntington 100</h3>
+        <p>Northeastern's Huntington 100 recognizes undergraduates entering their final year whose work reflects the university's mission and values. I was named to the 2026 cohort.</p>
+      </div>
     </div>
+
   </div>
 </section>
 </main>
