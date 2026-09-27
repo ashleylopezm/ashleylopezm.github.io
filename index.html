@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -20,6 +20,7 @@
   --graphite:#10231C;
   --rule:rgba(16,35,28,.18);
   --on-pine:#EFF5EC;
+  --date:var(--pine);
 
   --bg:var(--paper);
   --fg:var(--graphite);
@@ -41,6 +42,7 @@
     --clay:#F08A6C;
     --brass:#F2C863;
     --leaf:#69CA9E;
+    --date:#69CA9E;
   }
 }
 :root[data-theme="dark"]{
@@ -53,6 +55,7 @@
   --clay:#F08A6C;
   --brass:#F2C863;
   --leaf:#69CA9E;
+  --date:#69CA9E;
 }
 *,*::before,*::after{box-sizing:inherit}
 html,body{margin:0}
@@ -117,7 +120,7 @@ a{color:inherit}
   font-size:.95rem;
   transition:background .15s ease,color .15s ease,border-color .15s ease;
 }
-.links a:hover{background:var(--brass);border-color:var(--brass);color:var(--graphite)}
+.links a:hover{background:var(--brass);border-color:var(--brass);color:#0B291E}
 .links li:first-child a{background:var(--clay);border-color:var(--clay)}
 .links li:first-child a:hover{background:var(--brass);border-color:var(--brass)}
 
@@ -134,7 +137,7 @@ section.band{padding:clamp(3rem,7vw,5.5rem) 0}
 }
 #projects h2::before{background:var(--brass)}
 #skills h2::before{background:var(--moss)}
-#education h2::before{background:var(--pine)}
+#education h2::before{background:var(--date)}
 
 /* ---------- entries ---------- */
 .job{
@@ -149,7 +152,7 @@ section.band{padding:clamp(3rem,7vw,5.5rem) 0}
   font-weight:700;
   font-size:.92rem;
   padding-top:.42rem;
-  color:var(--pine);
+  color:var(--date);
 }
 .role{font-size:clamp(1.25rem,1.1rem + .6vw,1.6rem);font-weight:600}
 .where{font-weight:700;margin:.25rem 0 .7rem}
